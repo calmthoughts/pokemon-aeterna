@@ -10744,6 +10744,28 @@ const u32 gObjectEventPic_Substitute[] = INCGFX_COMP("graphics/pokemon/question_
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_RALTS
 
+#if P_FAMILY_RALTS
+    const u32 gMonFrontPic_RaltsItalic[] = INCGFX_U32("graphics/pokemon/ralts_italic/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_RaltsItalic[] = INCGFX_U16("graphics/pokemon/ralts_italic/normal.pal", ".gbapal");
+    const u32 gMonBackPic_RaltsItalic[] = INCGFX_U32("graphics/pokemon/ralts_italic/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_RaltsItalic[] = INCGFX_U16("graphics/pokemon/ralts_italic/shiny.pal", ".gbapal");
+    const u8 gMonIcon_RaltsItalic[] = INCGFX_U8("graphics/pokemon/ralts_italic/icon.png", ".4bpp");
+
+    const u32 gMonFrontPic_Velito[] = INCGFX_U32("graphics/pokemon/velito/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_Velito[] = INCGFX_U16("graphics/pokemon/velito/normal.pal", ".gbapal");
+    const u32 gMonBackPic_Velito[] = INCGFX_U32("graphics/pokemon/velito/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Velito[] = INCGFX_U16("graphics/pokemon/velito/shiny.pal", ".gbapal");
+    const u8 gMonIcon_Velito[] = INCGFX_U8("graphics/pokemon/velito/icon.png", ".4bpp");
+
+#if P_GEN_4_CROSS_EVOS
+    const u32 gMonFrontPic_GalladeItalic[] = INCGFX_U32("graphics/pokemon/gallade_italic/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_GalladeItalic[] = INCGFX_U16("graphics/pokemon/gallade_italic/normal.pal", ".gbapal");
+    const u32 gMonBackPic_GalladeItalic[] = INCGFX_U32("graphics/pokemon/gallade_italic/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_GalladeItalic[] = INCGFX_U16("graphics/pokemon/gallade_italic/shiny.pal", ".gbapal");
+    const u8 gMonIcon_GalladeItalic[] = INCGFX_U8("graphics/pokemon/gallade_italic/icon.png", ".4bpp");
+#endif //P_GEN_4_CROSS_EVOS
+#endif //P_FAMILY_RALTS
+
 #if P_FAMILY_SURSKIT
 #if !P_GBA_STYLE_SPECIES_GFX
     const u32 gMonFrontPic_Surskit[] = INCGFX_U32("graphics/pokemon/surskit/anim_front.png", ".4bpp.smol");

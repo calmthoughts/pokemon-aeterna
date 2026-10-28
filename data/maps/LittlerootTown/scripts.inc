@@ -249,6 +249,35 @@ LittlerootTown_EventScript_Boy::
 	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
 	end
 
+LittlerootTown_EventScript_ItalicPokemonGift::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_ITALIC_RALTS, LittlerootTown_EventScript_ItalicPokemonGift_Done
+	checkitemspace ITEM_RARE_CANDY, 2
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_EventScript_ItalicPokemonGift_NoBagSpace
+	msgbox LittlerootTown_Text_ItalicPokemonGift, MSGBOX_DEFAULT
+	givemon SPECIES_RALTS_ITALIC, 30
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_EventScript_ItalicPokemonGift_Reward
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_EventScript_ItalicPokemonGift_Reward
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+LittlerootTown_EventScript_ItalicPokemonGift_Reward::
+	giveitem ITEM_RARE_CANDY, 2
+	setflag FLAG_GOT_ITALIC_RALTS
+	release
+	end
+
+LittlerootTown_EventScript_ItalicPokemonGift_Done::
+	msgbox LittlerootTown_Text_ItalicPokemonGift_Done, MSGBOX_NPC
+	release
+	end
+
+LittlerootTown_EventScript_ItalicPokemonGift_NoBagSpace::
+	msgbox LittlerootTown_Text_ItalicPokemonGift_NoBagSpace, MSGBOX_NPC
+	release
+	end
+
 LittlerootTown_EventScript_Twin::
 	lock
 	faceplayer
@@ -963,6 +992,16 @@ LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "the wild to do more research…\p"
 	.string "When does PROF. BIRCH spend time\n"
 	.string "at home?$"
+
+LittlerootTown_Text_ItalicPokemonGift:
+	.string "Take this special RALTS and two\n"
+	.string "RARE CANDIES with you!$"
+
+LittlerootTown_Text_ItalicPokemonGift_Done:
+	.string "Take good care of your RALTS!$"
+
+LittlerootTown_Text_ItalicPokemonGift_NoBagSpace:
+	.string "Make room in your BAG first.$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"

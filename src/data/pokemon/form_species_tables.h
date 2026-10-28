@@ -844,6 +844,12 @@ static const u16 sLinooneFormSpeciesIdTable[] = {
 #endif //P_FAMILY_ZIGZAGOON
 
 #if P_FAMILY_RALTS
+static const u16 sRaltsFormSpeciesIdTable[] = {
+    SPECIES_RALTS,
+    SPECIES_RALTS_ITALIC,
+    FORM_SPECIES_END,
+};
+
 static const u16 sGardevoirFormSpeciesIdTable[] = {
     SPECIES_GARDEVOIR,
 #if P_MEGA_EVOLUTIONS
@@ -855,6 +861,9 @@ static const u16 sGardevoirFormSpeciesIdTable[] = {
 #if P_GEN_4_CROSS_EVOS
 static const u16 sGalladeFormSpeciesIdTable[] = {
     SPECIES_GALLADE,
+#if P_GEN_4_CROSS_EVOS
+    SPECIES_GALLADE_ITALIC,
+#endif
 #if P_MEGA_EVOLUTIONS
     SPECIES_GALLADE_MEGA,
 #endif

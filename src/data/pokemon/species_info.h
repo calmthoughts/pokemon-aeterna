@@ -174,6 +174,215 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 1,
     },
 
+#if P_FAMILY_RALTS
+    [SPECIES_RALTS_ITALIC] =
+    {
+        .baseHP = 28,
+        .baseAttack = 35,
+        .baseDefense = 30,
+        .baseSpeed = 40,
+        .baseSpAttack = 35,
+        .baseSpDefense = 30,
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_PSYCHIC),
+        .catchRate = 235,
+        .expYield = 40,
+        .evYield_Attack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = 35,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_INNER_FOCUS, ABILITY_STEADFAST, ABILITY_JUSTIFIED },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Ralts"),
+        .cryId = CRY_RALTS,
+        .natDexNum = NATIONAL_DEX_RALTS,
+        .categoryName = _("Feeling"),
+        .height = 4,
+        .weight = 66,
+        .description = COMPOUND_STRING(
+            "A Ralts has the power to sense the\n"
+            "emotions of people and Pokémon with the\n"
+            "horns on its head. It takes cover if it\n"
+            "senses any hostility."),
+        .pokemonScale = 457,
+        .pokemonOffset = -3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_RaltsItalic,
+        .frontPicSize = MON_COORDS_SIZE(24, 40),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 15 : 12,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 8),
+            ANIMCMD_FRAME(1, 25),
+            ANIMCMD_FRAME(0, 8),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+        .backPic = gMonBackPic_RaltsItalic,
+        .backPicSize = MON_COORDS_SIZE(32, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_RaltsItalic,
+        .shinyPalette = gMonShinyPalette_RaltsItalic,
+        .iconSprite = gMonIcon_RaltsItalic,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 1, SHADOW_SIZE_S)
+        FOOTPRINT(Ralts)
+        OVERWORLD(
+            sPicTable_Ralts,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Ralts,
+            gShinyOverworldPalette_Ralts
+        )
+        .levelUpLearnset = sRaltsLevelUpLearnset,
+        .teachableLearnset = sRaltsTeachableLearnset,
+        .eggMoveLearnset = sRaltsEggMoveLearnset,
+        .formSpeciesIdTable = sRaltsFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_VELITO}),
+    },
+
+    [SPECIES_VELITO] =
+    {
+        .baseHP = 38,
+        .baseAttack = 70,
+        .baseDefense = 30,
+        .baseSpeed = 75,
+        .baseSpAttack = 35,
+        .baseSpDefense = 30,
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_PSYCHIC),
+        .catchRate = 120,
+        .expYield = 97,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = 35,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_INNER_FOCUS, ABILITY_STEADFAST, ABILITY_JUSTIFIED },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Velito"),
+        .cryId = CRY_KIRLIA,
+        .natDexNum = NATIONAL_DEX_VELITO,
+        .categoryName = _("Emotion"),
+        .height = 8,
+        .weight = 202,
+        .description = COMPOUND_STRING(
+            "A Kirlia has the psychic power to create \n"
+            "a rip in the dimensions and see into the\n"
+            "future. It is said to dance with pleasure\n"
+            "on sunny mornings."),
+        .pokemonScale = 354,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Velito,
+        .frontPicSize = MON_COORDS_SIZE(32, 56),
+        .frontPicYOffset = 6,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 39),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Velito,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 56) : MON_COORDS_SIZE(48, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_Velito,
+        .shinyPalette = gMonShinyPalette_Velito,
+        .iconSprite = gMonIcon_Velito,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(-2, 7, SHADOW_SIZE_S)
+        FOOTPRINT(Kirlia)
+        OVERWORLD(
+            sPicTable_Kirlia,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Kirlia,
+            gShinyOverworldPalette_Kirlia
+        )
+        .levelUpLearnset = sKirliaLevelUpLearnset,
+        .teachableLearnset = sKirliaTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GALLADE_ITALIC}),
+    },
+
+#if P_GEN_4_CROSS_EVOS
+    [SPECIES_GALLADE_ITALIC] =
+    {
+        .baseHP = 68,
+        .baseAttack = 145,
+        .baseDefense = 100,
+        .baseSpeed = 80,
+        .baseSpAttack = 55,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_PSYCHIC),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 259 : (P_UPDATED_EXP_YIELDS >= GEN_5) ? 233 : 208,
+        .evYield_Attack = 3,
+        .genderRatio = MON_MALE,
+        .eggCycles = 20,
+        .friendship = 35,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_STEADFAST, ABILITY_SHARPNESS, ABILITY_JUSTIFIED },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Gallade"),
+        .cryId = CRY_GALLADE,
+        .natDexNum = NATIONAL_DEX_GALLADE,
+        .categoryName = _("Blade"),
+        .height = 16,
+        .weight = 520,
+        .description = COMPOUND_STRING(
+            "A master of courtesy and swordsmanship,\n"
+            "it fights using extending swords on its\n"
+            "elbows when trying to protect someone.\n"
+            "It can sense what its foe is thinking."),
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_GalladeItalic,
+        .frontPicSize = MON_COORDS_SIZE(56, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 20),
+        ),
+        .frontAnimId = ANIM_H_VIBRATE,
+        .backPic = gMonBackPic_GalladeItalic,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 5,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_GalladeItalic,
+        .shinyPalette = gMonShinyPalette_GalladeItalic,
+        .iconSprite = gMonIcon_GalladeItalic,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 13, SHADOW_SIZE_L)
+        FOOTPRINT(Gallade)
+        OVERWORLD(
+            sPicTable_Gallade,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Gallade,
+            gShinyOverworldPalette_Gallade
+        )
+        .levelUpLearnset = sGalladeItalicLevelUpLearnset,
+        .teachableLearnset = sGalladeTeachableLearnset,
+        .formSpeciesIdTable = sGalladeFormSpeciesIdTable,
+    },
+#endif //P_GEN_4_CROSS_EVOS
+#endif //P_FAMILY_RALTS
+
     /* You may add any custom species below this point based on the following structure: */
 
     /*
