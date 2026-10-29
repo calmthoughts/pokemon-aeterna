@@ -10,7 +10,7 @@
 struct RecordedBattleSave
 {
     struct Pokemon parties[MAX_BATTLE_TRAINERS][PARTY_SIZE];
-    u8 playersName[MAX_LINK_PLAYERS][PLAYER_NAME_LENGTH + 1];
+    u8 playersName[MAX_LINK_PLAYERS][PLAYER_OT_NAME_LENGTH + 1];
     u32 playersTrainerId[MAX_LINK_PLAYERS];
     u8 playersLanguage[MAX_LINK_PLAYERS];
     rng_value_t rngSeed;
@@ -26,7 +26,7 @@ struct RecordedBattleSave
     u16 playersGender:4; // 1 bit per player; please don't hate me
     u16 padding:1;
     u64 AI_scripts[MAX_BATTLERS_COUNT];
-    u8 recordMixFriendName[PLAYER_NAME_LENGTH + 1];
+    u8 recordMixFriendName[PLAYER_OT_NAME_LENGTH + 1];
     u8 recordMixFriendClass;
     u8 apprenticeId;
     u8 recordMixFriendLanguage:3; // 7 languages

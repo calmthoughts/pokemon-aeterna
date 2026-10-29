@@ -58,7 +58,7 @@ struct SioInfo
     u8 playerCount;
     u8 linkPlayerIdx[RFU_CHILD_MAX];
     struct LinkPlayer linkPlayers[MAX_RFU_PLAYERS];
-    u8 filler[92];
+    u8 filler[32];
 };
 
 // Struct is mostly empty, presumably because usage of
@@ -2048,7 +2048,8 @@ bool32 RfuMain2(void)
 
 static void SetHostRfuUsername(void)
 {
-    StringCopy(gHostRfuUsername, gSaveBlock2Ptr->playerName);
+    StringCopyN(gHostRfuUsername, gSaveBlock2Ptr->playerName, RFU_USER_NAME_LENGTH - 1);
+    gHostRfuUsername[RFU_USER_NAME_LENGTH - 1] = EOS;
 }
 
 void ResetHostRfuGameData(void)

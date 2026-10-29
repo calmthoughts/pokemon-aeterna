@@ -2462,7 +2462,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         {
             retVal = 0;
 
-            while (retVal < PLAYER_NAME_LENGTH)
+            while (retVal < PLAYER_OT_NAME_LENGTH)
             {
                 data[retVal] = boxMon->otName[retVal];
                 retVal++;
@@ -2897,7 +2897,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_OT_NAME:
         {
             s32 i;
-            for (i = 0; i < PLAYER_NAME_LENGTH; i++)
+            for (i = 0; i < PLAYER_OT_NAME_LENGTH; i++)
                 boxMon->otName[i] = data[i];
             break;
         }
